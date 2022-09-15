@@ -11,9 +11,12 @@ Fork & Clone this repo.
 - [ ] In this space below, list **THREE** ideas for your Project 2. For each idea, include [user stories](https://www.atlassian.com/agile/project-management/user-stories) for each idea and a link to the API(s) you want to use for it.
 
 --------------------------------------------------------
-1. 
-2. 
-3.
+1. One Quote at a Time (Motivational Quotes) User Story: As a user, I want to be able to easily access motivational quotes based on experience as a traditional or non-traditional student so that I will be encouraged not to give up on my journey.The user will be able to stay on track with studying and joining class by having preset alerts and reminders based on the times when class starts and based on study shedules outside of normal class hours based on the users schedule. 
+API Link https://rapidapi.com/hafitkode-iLnzlb6I0uv/api/motivation-api1/
+2. Quick Cook Book Guide (Personalized Recipes) User Story: As a user, I want to be able to quickly and easily access recipes of my choice that is based on recipes from anywhere on the web at anytime so that cooking will be hassle free. The recipes will be editable to fit the users dietary, family, and personal needs.  
+API Link https://rapidapi.com/mycookbook/api/mycookbook-io1/
+4. Now and Then Weather (Real-Time and Historical Weather) User Story: As a user, I will be able to retrieve instant information about weather for the location of my choice. Historical weather information will also be available to identify the tpye of weather that a place historically has had on a specific date overtime.  
+API Link https://weatherstack.com/
 ---------------------------------------------------------
 
 - [ ] Make a PR when you're done!
