@@ -1,0 +1,26 @@
+{
+  "development": {
+    "database": "express_auth_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "username": "postgres",
+    "password": "C041083m1!"
+  },
+  "test": {
+    "database": "express_auth_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "username": "postgres",
+    "password": "C041083m1!"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "dialectOptions": {
+        "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+        }
+    }
+  }
+}
