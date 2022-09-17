@@ -32,10 +32,13 @@ In the space below:
 
 ----------------------------------------------------------
 ### User Stories
+One Quote at a Time (Motivational Quotes) User Story: As a user, I want to be able to easily access motivational quotes based on my current life experience so that I will be encouraged not to give up on my journey.The user will be able to stay on track by having preset alerts and reminders. 
+API Link https://rapidapi.com/hafitkode-iLnzlb6I0uv/api/motivation-api1/
 
 ----------------------------------------------------------
 ### Wireframes
 
+![Wireframe](images\WireframeProject.PNG)
 ----------------------------------------------------------
 
 Make a PR when you're done!
@@ -107,7 +110,7 @@ Make a PR when you're done!
 ```
 `card` USER EXPERIENCE
 ```
-### USER EXPERIENCE
+### USER EXPERIENCE 
 - [ ] Effort was put into design
 - [ ] No broken links (server errors or 404s)
 - [ ] Typing a purposely bad link renders an error ejs page
