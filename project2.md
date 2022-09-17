@@ -41,7 +41,7 @@ API Link https://rapidapi.com/hafitkode-iLnzlb6I0uv/api/motivation-api1/
 ----------------------------------------------------------
 ### Wireframes
 
-![Wireframe](images\WireframeProject.PNG)
+![Wireframe](./images/WireframeProject.PNG)
 ----------------------------------------------------------
 
 Make a PR when you're done!
