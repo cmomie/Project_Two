@@ -1,13 +1,13 @@
 {
   "development": {
-    "database": "express_auth_dev",
+    "database": "quotes_project",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "username": "postgres",
     "password": "C041083m1!"
   },
   "test": {
-    "database": "express_auth_test",
+    "database": "quotes_project",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "username": "postgres",

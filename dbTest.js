@@ -1,4 +1,5 @@
 const db = require('./models');
+//const bcrypt = require('bcryptjs');
 
 // Implement CRUD for user model
 
@@ -6,8 +7,9 @@ const db = require('./models');
 async function createUser() {
     try {
         const newUser = await db.user.create({
-            name: "My Name",
-            email: "myemail@gmail.com"
+            name: "Name",
+            email: "myemail@gmail.com",
+            password: "password"
         });
         console.log('my new user >>>', newUser);
     } catch (error) {
@@ -15,8 +17,9 @@ async function createUser() {
     }
     
 }
-// @todo run createUser function below
 
+// @todo run createUser function below
+//createUser()
 // READ
 // find one user
 async function findOneUser() {
@@ -30,7 +33,7 @@ async function findOneUser() {
     }
 }
 // @todo run findOneUser function below
-
+//findOneUser();
 // find all users
 async function findAllUsers() {
     try {
@@ -41,14 +44,16 @@ async function findAllUsers() {
     }
 }
 // @todo run findAllUsers function below
-
+//findAllUsers();
 // find one user
 async function findOrCreate() {
     try {
         const users = await db.user.findOrCreate({
             where: { email: 'brainsmith@gmail.com' },
             defaults: {
-                name: 'Brian Smith',
+                name: 'Brian',
+                email: "briansmith@gmail.com",
+                password: "password"
             },
         });
         console.log('all users here >>>', users);  
@@ -57,12 +62,13 @@ async function findOrCreate() {
     }
 }
 // @todo run findOrCreate function below
+//findOrCreate();
 
 // UPDATE
 async function updateUser() {
     try {
         const numRowsUpdated = await db.user.update({
-            name: 'Brain Taco'
+            name: 'Brain'
         }, {
             where: {
                 email: 'brainsmith@gmail.com'
@@ -74,12 +80,12 @@ async function updateUser() {
     }
 }
 // @todo run updateUser function below
-
+//updateUser();
 // DELETE
 async function deleteUser() {
     try {
         let numOfRowsDeleted = await db.user.destroy({
-            where: { email: 'brainsmith@gmail.com' }
+            where: { name: 'Brian'}
         });
         console.log('number of rows deleted >>>', numOfRowsDeleted);
     } catch (error) {
@@ -87,3 +93,4 @@ async function deleteUser() {
     }
 }
 // @todo run deleteUser function below
+deleteUser();

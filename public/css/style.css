@@ -16,3 +16,12 @@ body{
   text-align:center;
   margin: 20px 0px 20px 0px;   
 }
+
+.box{
+  background:white;
+  width:300px;
+  border-radius:6px;
+  margin: 0 auto 0 auto;
+  padding:0px 0px 70px 0px;
+  border: #2980b9 4px solid; 
+}
