@@ -11,8 +11,12 @@ module.exports = {
       quote: {
         type: Sequelize.STRING
       },
-      date: {
+      userId: {
         type: Sequelize.INTEGER
+      },
+      name: {
+        type: Sequelize.STRING 
+      
       },
       createdAt: {
         allowNull: false,

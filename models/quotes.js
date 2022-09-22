@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.quotes.belongsTo(models.user)
     }
   }
   quotes.init({
     quote: DataTypes.STRING,
-    date: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    name:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'quotes',
