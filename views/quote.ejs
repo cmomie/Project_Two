@@ -1,10 +1,24 @@
-
 <form method="POST" action="./quotes">
     <button class="btn btn-primary" type="submit">Add Quote</button>
 </form>
-<% if (Array.isArray(quotes) && quotes.length > 0) {  %> 
-    <% quotes.forEach((quote) =>{ %> 
-<p> <%= quote.quote %> </p>
-<p> <%= quote.name %> </p>
-    <% }) %> 
-    <% } %> 
+<table class="table table-border tables-striped">
+    <thead>
+    <th scope="col">
+        Quote
+    </th>
+    <th scope="col">
+        Author
+    </th>
+    </thead>
+<tbody>
+    
+<% if (Array.isArray(quotes) && quotes.length> 0) { %>
+    <% quotes.forEach((quote)=>{ %>
+        <tr>
+            <th> <%= quote.quote %></th>
+            <th><%= quote.name %></th>
+        </tr>
+    <% }) %>
+<% } %>
+</tbody>
+</table>
