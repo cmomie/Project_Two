@@ -6,8 +6,13 @@
 <p>Name: <%= name %></p>
 <p>Email: <%= email %></p>
 
-<button class="btn btn-lg btn-secondary fw-bold border-white bg-blue"><a href="/profile/edit">Edit Profile</a></button>
+<button class="btn btn-lg btn-secondary fw-bold border-white bg-blue">
+    <a href="/profile/edit">Edit Profile</a>
+</button>
+<br>
+<br>
 <form action="/profile/<%=id%> ?_method=DELETE" method="POST">
     <input type="text" name="testing" hidden value="testing delete">
-    <button type="submit">submit delete example</button>
+    <!-- <button type="submit">submit delete example</button> -->
+    <button class="btn btn-lg btn-secondary fw-bold border-white bg-red">Delete Profile</a></button>
 </form>
