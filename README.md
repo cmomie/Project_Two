@@ -121,3 +121,31 @@ Make a PR when you're done!
 - [ ] Content is responsive to screen size changes
 - [ ] No glaring alignment or grid errors
 ```
+`card` INSTALLATION PROCESS
+```
+- [ ] git clone https://github.com/cmomie/Project_Two.git
+- [ ] cd Project-Two
+- [ ] npm install
+- [ ] touch .env
+```
+
+and add inside `card`.env file 
+```
+- [ ] SECRET_SESSION=ithastobeasecret
+```
+If there is an API KEY go to said website and get an API KEY
+put this inside of their `card` .env file
+```
+- [ ] API_KEY=......
+create a database
+- [ ] npm install sequelize-cl
+- [ ] npx sequelize-cli db:migrate quote
+migrate their database
+- [ ] npx sequelize-cli db:migrate
+if they need to seed data
+- [ ] npx sequelize-cli db:seed:all
+start the server
+- [ ] npm start
+
+
+
