@@ -6,14 +6,16 @@ const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const app = express();
 const isLoggedIn = require('./middleware/isLoggedIn');
+const methodOverride = require('method-override');
 const secret = process.env.SECRET_SESSION
-
+const db = require('./models');
 
 // console.log(SECRET_SESSION);
 
 app.set('view engine', 'ejs'); //set up view engine
 
 app.use(require('morgan')('dev')); //tells the routes available on the server when restarted
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false })); //tells express to do url encoding to avoid having to parse queries
 app.use(express.static(__dirname + '/public')); //setting up static route to deliver full routes from public files
 app.use(layouts); //add layouts as view engine/middleware
@@ -46,6 +48,46 @@ app.get('/profile', isLoggedIn, (req, res) => {
   const { id, name, email } = req.user.get(); 
   res.render('profile', { id, name, email });
 });
+
+app.delete('/profile/:id', isLoggedIn, (req, res) => {
+  res.redirect('/');
+});
+
+app.get('/profile/edit', isLoggedIn, (req, res) => {
+  res.render('edit');
+});
+
+app.put('/profile/:id', isLoggedIn, async (req, res) => {
+  try {
+      const foundUser = await db.user.findOne({ where: { email: req.body.email }});
+      if (foundUser.email && foundUser.id !== req.user.id) {
+        req.flash('error', 'Email already exists. Please try again.');
+        res.redirect('/profile');
+      } else {
+        const usersUpdated = await db.user.update({
+          email: req.body.email,
+          name: req.body.name
+        }, {
+          where: {
+            id: req.params.id
+          }
+        });
+
+        console.log('********** PUT ROUTE *************');
+        console.log('Users updated', usersUpdated);
+        console.log('**************************************************');
+  
+        // redirect back to the profile page
+        res.redirect('/profile'); // route
+      }
+  } catch (error) {
+    console.log('*********************ERROR***********************');
+    console.log(error);
+    console.log('**************************************************');
+    res.render('edit');
+  }
+});
+
 
 app.use('/auth', require('./controllers/auth')); //additional controllers were added and it tell server whenever it see auth it will pass the rest to be processed 
 app.use('/quotes', require('./controllers/quotes'));
