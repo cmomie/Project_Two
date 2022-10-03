@@ -18,7 +18,7 @@ app.use(require('morgan')('dev'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false })); 
 app.use(express.static(__dirname + '/public')); 
-
+app.use(layouts);
 app.use(flash());            // flash middleware (redbox that pops up for incorrect password)
 
 app.use(session({     //node.js is able to save user info from isLogged even after logged out
@@ -87,14 +87,13 @@ app.put('/profile/:id', isLoggedIn, async (req, res) => {
   }
 });
 
-
 app.use('/auth', require('./controllers/auth')); 
 app.use('/quotes', require('./controllers/quotes'));
 
 app.get('*', (req, res) => {
   res.render('404');
-  })
-  
+})
+
 const PORT = process.env.PORT || 3000; 
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);
