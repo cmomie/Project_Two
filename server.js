@@ -1,4 +1,4 @@
-require('dotenv').config(); //moves everything so that it's accesible in the code
+require('dotenv').config(); 
 const express = require('express');
 const layouts = require('express-ejs-layouts');
 const session = require('express-session');
@@ -12,26 +12,25 @@ const db = require('./models');
 
 // console.log(SECRET_SESSION);
 
-app.set('view engine', 'ejs'); //set up view engine
+app.set('view engine', 'ejs'); 
 
-app.use(require('morgan')('dev')); //tells the routes available on the server when restarted
+app.use(require('morgan')('dev')); 
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({ extended: false })); //tells express to do url encoding to avoid having to parse queries
-app.use(express.static(__dirname + '/public')); //setting up static route to deliver full routes from public files
-app.use(layouts); //add layouts as view engine/middleware
+app.use(express.urlencoded({ extended: false })); 
+app.use(express.static(__dirname + '/public')); 
 
 app.use(flash());            // flash middleware (redbox that pops up for incorrect password)
 
 app.use(session({     //node.js is able to save user info from isLogged even after logged out
-  secret: secret,    // What we actually will be giving the user on our site as a session cookie
-  resave: false,             // Save the session even if it's modified, make this false
-  saveUninitialized: true    // If we have a new session, we save it, therefore making that true
+  secret: secret,    
+  resave: false,             
+  saveUninitialized: true    
 }));
 
 app.use(passport.initialize());      // Initialize passport
 app.use(passport.session());         // Add a session
 
-app.use((req, res, next) => { //set a custom funtion used with flash and appending
+app.use((req, res, next) => { 
   console.log(res.locals);
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
@@ -89,8 +88,13 @@ app.put('/profile/:id', isLoggedIn, async (req, res) => {
 });
 
 
-app.use('/auth', require('./controllers/auth')); //additional controllers were added and it tell server whenever it see auth it will pass the rest to be processed 
+app.use('/auth', require('./controllers/auth')); 
 app.use('/quotes', require('./controllers/quotes'));
+
+app.get('*', (req, res) => {
+  res.render('404');
+  })
+  
 const PORT = process.env.PORT || 3000; 
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);

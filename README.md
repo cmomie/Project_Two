@@ -114,10 +114,12 @@ Make a PR when you're done!
 ```
 `card` USER EXPERIENCE
 ```
-### USER EXPERIENCE 
 - [ ] Effort was put into design
 - [ ] No broken links (server errors or 404s)
-- [ ] Typing a purposely bad link renders an error ejs page
+- [ ] Typing a purposely bad link renders an error 
+```
+`card` ejs page
+```
 - [ ] Content is responsive to screen size changes
 - [ ] No glaring alignment or grid errors
 ```
@@ -133,19 +135,30 @@ and add inside `card`.env file
 ```
 - [ ] SECRET_SESSION=ithastobeasecret
 ```
-If there is an API KEY go to said website and get an API KEY
-put this inside of their `card` .env file
+If there is an API KEY go to said website and get an API KEYput this inside of their `card` .env file
 ```
 - [ ] API_KEY=......
+```
 create a database
+`card`
+```
 - [ ] npm install sequelize-cl
 - [ ] npx sequelize-cli db:migrate quote
+`card`
+```
 migrate their database
+`card`
+```
 - [ ] npx sequelize-cli db:migrate
+```
 if they need to seed data
+`card`
+```
 - [ ] npx sequelize-cli db:seed:all
+```
 start the server
+```
 - [ ] npm start
-
+```
 
 
