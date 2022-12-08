@@ -90,6 +90,7 @@ app.put('/profile/:id', isLoggedIn, async (req, res) => {
 app.use('/auth', require('./controllers/auth')); 
 app.use('/quotes', require('./controllers/quotes'));
 
+
 app.get('*', (req, res) => {
   res.render('404');
 })
